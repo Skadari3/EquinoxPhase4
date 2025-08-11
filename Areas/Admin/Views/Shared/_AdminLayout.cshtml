@@ -4,17 +4,32 @@
 
 @section Header {
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Equinox</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <a class="navbar-brand text-white" asp-area="Admin" asp-controller="Home" asp-action="Index">Equinox Admin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Admin" asp-controller="Club" asp-action="Index">Manage Club</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Admin" asp-controller="ClassCategory" asp-action="Index">Manage Class Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
+                        </li>
+                    </ul>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Back to Site</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Back to Site</a>
                         </li>
                     </ul>
                 </div>
@@ -23,6 +38,9 @@
     </header>
 }
 
-@RenderBody()
+
+<div class="container mt-3">
+    @RenderBody()
+</div>
 
 @RenderSection("Scripts", required: false)
